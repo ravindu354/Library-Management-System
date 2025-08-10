@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.controllers.UserController" styleClass="user-form-root">
+
+   <!-- Title -->
+   <top>
+      <VBox spacing="10" styleClass="header-section">
+         <padding>
+            <Insets bottom="20.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+         <Label text="Users Management" styleClass="page-title">
+            <font>
+               <Font name="System Bold" size="20.0" />
+            </font>
+         </Label>
+      </VBox>
+   </top>
+
+   <!-- Main Content -->
+   <center>
+      <HBox spacing="30" styleClass="main-content">
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="10.0" />
+         </padding>
+
+         <!-- User Form -->
+         <VBox spacing="20" styleClass="form-section" prefWidth="350">
+            
+            <Label text="User Information" styleClass="section-title">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+
+            <VBox spacing="15" styleClass="form-fields">
+               
+               <!-- Username -->
+               <VBox spacing="5">
+                  <Label text="Username *" styleClass="field-label" />
+                  <TextField fx:id="usernameField" promptText="Enter username" styleClass="form-field" />
+               </VBox>
+
+               <!-- Password -->
+               <VBox spacing="5">
+                  <Label text="Password *" styleClass="field-label" />
+                  <PasswordField fx:id="passwordField" promptText="Enter password" styleClass="form-field" />
+               </VBox>
+
+               <!-- First Name -->
+               <VBox spacing="5">
+                  <Label text="First Name *" styleClass="field-label" />
+                  <TextField fx:id="firstNameField" promptText="Enter first name" styleClass="form-field" />
+               </VBox>
+
+               <!-- Last Name -->
+               <VBox spacing="5">
+                  <Label text="Last Name *" styleClass="field-label" />
+                  <TextField fx:id="lastNameField" promptText="Enter last name" styleClass="form-field" />
+               </VBox>
+
+               <!-- Email -->
+               <VBox spacing="5">
+                  <Label text="Email *" styleClass="field-label" />
+                  <TextField fx:id="emailField" promptText="Enter email address" styleClass="form-field" />
+               </VBox>
+
+               <!-- Phone -->
+               <VBox spacing="5">
+                  <Label text="Phone Number" styleClass="field-label" />
+                  <TextField fx:id="phoneField" promptText="Enter phone number" styleClass="form-field" />
+               </VBox>
+
+               <!-- Role -->
+               <VBox spacing="5">
+                  <Label text="Role *" styleClass="field-label" />
+                  <ComboBox fx:id="roleCombo" styleClass="form-combo" prefWidth="200" />
+               </VBox>
+
+               <!-- Active Status -->
+               <CheckBox fx:id="activeCheckBox" text="Active User" styleClass="form-checkbox" />
+
+            </VBox>
+
+            <!-- Form Buttons -->
+            <HBox spacing="15" alignment="CENTER" styleClass="form-buttons">
+               <Button fx:id="addButton" text="➕ Add User" styleClass="add-button" />
+               <Button fx:id="updateButton" text="✏️ Update User" styleClass="update-button" />
+               <Button fx:id="deleteButton" text="🗑️ Delete User" styleClass="delete-button" />
+               <Button fx:id="clearButton" text="🔄 Clear" styleClass="clear-button" />
+            </HBox>
+
+            <Label text="* Required fields" styleClass="required-note" />
+
+         </VBox>
+
+         <!-- Users Table -->
+         <VBox spacing="15" styleClass="table-section" HBox.hgrow="ALWAYS">
+            
+            <HBox spacing="15" alignment="CENTER_LEFT">
+               <Label text="Existing Users" styleClass="section-title">
+                  <font>
+                     <Font name="System Bold" size="16.0" />
+                  </font>
+               </Label>
+               <Region HBox.hgrow="ALWAYS" />
+               <Button fx:id="refreshButton" text="🔄 Refresh" styleClass="refresh-button" />
+            </HBox>
+
+            <TableView fx:id="usersTable" styleClass="users-table">
+               <columns>
+                  <TableColumn fx:id="idColumn" text="ID" prefWidth="50" />
+                  <TableColumn fx:id="usernameColumn" text="Username" prefWidth="100" />
+                  <TableColumn fx:id="nameColumn" text="Full Name" prefWidth="150" />
+                  <TableColumn fx:id="emailColumn" text="Email" prefWidth="150" />
+                  <TableColumn fx:id="phoneColumn" text="Phone" prefWidth="120" />
+                  <TableColumn fx:id="roleColumn" text="Role" prefWidth="80" />
+                  <TableColumn fx:id="activeColumn" text="Active" prefWidth="60" />
+               </columns>
+            </TableView>
+
+         </VBox>
+
+      </HBox>
+   </center>
+
+</BorderPane>

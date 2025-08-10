@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.controllers.LoginController" alignment="CENTER" spacing="20" styleClass="login-container">
+   <padding>
+      <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+   </padding>
+
+   <VBox fx:id="loginContainer" alignment="CENTER" spacing="30" styleClass="login-form" maxWidth="400">
+      <padding>
+         <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+      </padding>
+
+      <!-- Title -->
+      <Label fx:id="titleLabel" text="Library Management System" styleClass="login-title">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+
+      <!-- Login Form -->
+      <VBox spacing="20" alignment="CENTER">
+         
+         <VBox spacing="8">
+            <Label text="Username:" styleClass="form-label" />
+            <TextField fx:id="usernameField" promptText="Enter username" styleClass="form-input" />
+         </VBox>
+
+         <VBox spacing="8">
+            <Label text="Password:" styleClass="form-label" />
+            <PasswordField fx:id="passwordField" promptText="Enter password" styleClass="form-input" />
+         </VBox>
+
+         <!-- Error Label -->
+         <Label fx:id="errorLabel" text="Error message" styleClass="error-label" visible="false" />
+
+         <!-- Login Button -->
+         <Button fx:id="loginButton" text="Login" onAction="#handleLogin" styleClass="login-button" prefWidth="150" />
+
+      </VBox>
+
+      <!-- Demo Credentials Info -->
+      <VBox spacing="10" alignment="CENTER" styleClass="demo-info">
+         <Label text="Demo Credentials:" styleClass="demo-title">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Label>
+         <Label text="Librarian: admin / admin123" styleClass="demo-credential" />
+         <Label text="Faculty: faculty1 / faculty123" styleClass="demo-credential" />
+         <Label text="Student: student1 / student123" styleClass="demo-credential" />
+      </VBox>
+
+   </VBox>
+</VBox>

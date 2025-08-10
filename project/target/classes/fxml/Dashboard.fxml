@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.controllers.DashboardController" styleClass="dashboard-root">
+
+   <!-- Top Navigation Bar -->
+   <top>
+      <VBox spacing="10" styleClass="header-section">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         
+         <!-- Welcome Section -->
+         <HBox spacing="20" alignment="CENTER_LEFT">
+            <Label fx:id="welcomeLabel" text="Welcome, User" styleClass="welcome-label">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="userRoleLabel" text="Role: Student" styleClass="role-label" />
+            <Button fx:id="logoutButton" text="Logout" styleClass="logout-button" />
+         </HBox>
+
+         <!-- Navigation Buttons -->
+         <HBox fx:id="navigationBar" spacing="15" alignment="CENTER_LEFT" styleClass="navigation-bar">
+            <Button fx:id="booksButton" text="📚 Books" styleClass="nav-button" />
+            <Button fx:id="usersButton" text="👥 Users" styleClass="nav-button" />
+            <Button fx:id="issueReturnButton" text="📖 Issue/Return" styleClass="nav-button" />
+            <Button fx:id="reportsButton" text="📊 Reports" styleClass="nav-button" />
+         </HBox>
+      </VBox>
+   </top>
+
+   <!-- Main Content Area -->
+   <center>
+      <ScrollPane fitToWidth="true" styleClass="content-scroll">
+         <VBox fx:id="mainContent" spacing="25" styleClass="main-content">
+            <padding>
+               <Insets bottom="30.0" left="30.0" right="30.0" top="20.0" />
+            </padding>
+
+            <!-- Statistics Cards -->
+            <VBox spacing="15">
+               <Label text="Library Statistics" styleClass="section-title">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+               </Label>
+               
+               <GridPane hgap="20" vgap="20" styleClass="stats-grid">
+                  
+                  <!-- Total Books Card -->
+                  <VBox spacing="10" styleClass="stat-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <Label text="📚" styleClass="stat-icon" />
+                     <Label text="Total Books" styleClass="stat-label" />
+                     <Label fx:id="totalBooksLabel" text="0" styleClass="stat-value" />
+                  </VBox>
+
+                  <!-- Available Books Card -->
+                  <VBox spacing="10" styleClass="stat-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <Label text="📖" styleClass="stat-icon" />
+                     <Label text="Available Books" styleClass="stat-label" />
+                     <Label fx:id="availableBooksLabel" text="0" styleClass="stat-value" />
+                  </VBox>
+
+                  <!-- Total Users Card -->
+                  <VBox spacing="10" styleClass="stat-card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <Label text="👥" styleClass="stat-icon" />
+                     <Label text="Total Users" styleClass="stat-label" />
+                     <Label fx:id="totalUsersLabel" text="0" styleClass="stat-value" />
+                  </VBox>
+
+                  <!-- Active Issues Card -->
+                  <VBox spacing="10" styleClass="stat-card" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <Label text="📋" styleClass="stat-icon" />
+                     <Label text="Active Issues" styleClass="stat-label" />
+                     <Label fx:id="activeIssuesLabel" text="0" styleClass="stat-value" />
+                  </VBox>
+
+                  <!-- Overdue Issues Card -->
+                  <VBox spacing="10" styleClass="stat-card overdue-card" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <Label text="⚠️" styleClass="stat-icon" />
+                     <Label text="Overdue Issues" styleClass="stat-label" />
+                     <Label fx:id="overdueIssuesLabel" text="0" styleClass="stat-value" />
+                  </VBox>
+                  
+               </GridPane>
+            </VBox>
+
+            <!-- Notifications Section -->
+            <VBox fx:id="notificationsArea" spacing="15" styleClass="notifications-section">
+               <Label text="Your Notifications" styleClass="section-title">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+               </Label>
+               
+               <ListView fx:id="notificationsList" styleClass="notifications-list" prefHeight="200" />
+            </VBox>
+
+            <!-- Quick Actions Section -->
+            <VBox spacing="15" styleClass="quick-actions-section">
+               <Label text="Quick Actions" styleClass="section-title">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+               </Label>
+               
+               <HBox spacing="15" alignment="CENTER_LEFT">
+                  <Button text="🔍 Search Books" styleClass="action-button" />
+                  <Button text="📚 View My Books" styleClass="action-button" />
+                  <Button text="📊 View Reports" styleClass="action-button" />
+               </HBox>
+            </VBox>
+
+         </VBox>
+      </ScrollPane>
+   </center>
+
+</BorderPane>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.controllers.IssueReturnController" styleClass="issue-return-root">
+
+   <!-- Title -->
+   <top>
+      <VBox spacing="10" styleClass="header-section">
+         <padding>
+            <Insets bottom="20.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+         <Label text="Issue and Return Books" styleClass="page-title">
+            <font>
+               <Font name="System Bold" size="20.0" />
+            </font>
+         </Label>
+      </VBox>
+   </top>
+
+   <!-- Main Content -->
+   <center>
+      <VBox spacing="20" styleClass="main-content">
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="10.0" />
+         </padding>
+
+         <!-- Tab Pane for Issue and Return -->
+         <TabPane styleClass="operation-tabs" prefHeight="350">
+            
+            <!-- Issue Book Tab -->
+            <Tab fx:id="issueTab" text="📚 Issue Book" closable="false">
+               <VBox spacing="20" styleClass="tab-content">
+                  <padding>
+                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  </padding>
+
+                  <GridPane hgap="20" vgap="15" styleClass="issue-form">
+                     
+                     <!-- User Selection -->
+                     <Label text="Select User *" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                     <ComboBox fx:id="userComboIssue" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                     <!-- Book Selection -->
+                     <Label text="Select Book *" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                     <ComboBox fx:id="bookComboIssue" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                     <!-- Issue Date -->
+                     <Label text="Issue Date *" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                     <DatePicker fx:id="issueDatePicker" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                     <!-- Due Date -->
+                     <Label text="Due Date *" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                     <DatePicker fx:id="dueDatePicker" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                  </GridPane>
+
+                  <HBox spacing="15" alignment="CENTER">
+                     <Button fx:id="issueBookButton" text="📖 Issue Book" styleClass="issue-button" prefWidth="150" />
+                  </HBox>
+
+               </VBox>
+            </Tab>
+
+            <!-- Return Book Tab -->
+            <Tab fx:id="returnTab" text="📚 Return Book" closable="false">
+               <VBox spacing="20" styleClass="tab-content">
+                  <padding>
+                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  </padding>
+
+                  <GridPane hgap="20" vgap="15" styleClass="return-form">
+                     
+                     <!-- User Selection -->
+                     <Label text="Select User *" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                     <ComboBox fx:id="userComboReturn" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                     <!-- Issue Selection -->
+                     <Label text="Select Issue *" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                     <ComboBox fx:id="issueComboReturn" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                     <!-- Return Date -->
+                     <Label text="Return Date *" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                     <DatePicker fx:id="returnDatePicker" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                     <!-- Fine Display -->
+                     <Label text="Fine Amount" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                     <Label fx:id="fineLabel" text="Fine: $0.00" styleClass="fine-display" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                  </GridPane>
+
+                  <HBox spacing="15" alignment="CENTER">
+                     <Button fx:id="calculateFineButton" text="💰 Calculate Fine" styleClass="calculate-button" prefWidth="150" />
+                     <Button fx:id="returnBookButton" text="📚 Return Book" styleClass="return-button" prefWidth="150" />
+                  </HBox>
+
+               </VBox>
+            </Tab>
+
+         </TabPane>
+
+         <!-- Active Issues Table -->
+         <VBox spacing="15" styleClass="active-issues-section">
+            
+            <HBox spacing="15" alignment="CENTER_LEFT">
+               <Label text="Active Issues" styleClass="section-title">
+                  <font>
+                     <Font name="System Bold" size="16.0" />
+                  </font>
+               </Label>
+               <Region HBox.hgrow="ALWAYS" />
+               <Button fx:id="refreshButton" text="🔄 Refresh" styleClass="refresh-button" />
+            </HBox>
+
+            <TableView fx:id="activeIssuesTable" styleClass="issues-table" prefHeight="250">
+               <columns>
+                  <TableColumn fx:id="issueIdColumn" text="Issue ID" prefWidth="80" />
+                  <TableColumn fx:id="bookTitleColumn" text="Book Title" prefWidth="200" />
+                  <TableColumn fx:id="userNameColumn" text="User Name" prefWidth="150" />
+                  <TableColumn fx:id="issueDateColumn" text="Issue Date" prefWidth="100" />
+                  <TableColumn fx:id="dueDateColumn" text="Due Date" prefWidth="100" />
+                  <TableColumn fx:id="statusColumn" text="Status" prefWidth="100" />
+               </columns>
+            </TableView>
+
+         </VBox>
+
+      </VBox>
+   </center>
+
+</BorderPane>

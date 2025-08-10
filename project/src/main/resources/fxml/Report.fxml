@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.controllers.ReportController" styleClass="report-root">
+
+   <!-- Title -->
+   <top>
+      <VBox spacing="10" styleClass="header-section">
+         <padding>
+            <Insets bottom="20.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+         
+         <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Library Reports" styleClass="page-title">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="refreshAllButton" text="🔄 Refresh All" styleClass="refresh-button" />
+         </HBox>
+      </VBox>
+   </top>
+
+   <!-- Report Tabs -->
+   <center>
+      <TabPane fx:id="reportTabPane" styleClass="report-tabs">
+
+         <!-- All Issues Report -->
+         <Tab fx:id="allIssuesTab" text="📋 All Issues" closable="false">
+            <VBox spacing="15" styleClass="report-content">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+
+               <HBox spacing="15" alignment="CENTER_LEFT">
+                  <Label fx:id="allIssuesCountLabel" text="Total Issues: 0" styleClass="count-label">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="exportAllIssuesButton" text="📁 Export CSV" styleClass="export-button" />
+               </HBox>
+
+               <TableView fx:id="allIssuesTable" styleClass="report-table">
+                  <columns>
+                     <TableColumn fx:id="allIssueIdColumn" text="ID" prefWidth="60" />
+                     <TableColumn fx:id="allBookTitleColumn" text="Book Title" prefWidth="200" />
+                     <TableColumn fx:id="allUserNameColumn" text="User Name" prefWidth="150" />
+                     <TableColumn fx:id="allIssueDateColumn" text="Issue Date" prefWidth="100" />
+                     <TableColumn fx:id="allDueDateColumn" text="Due Date" prefWidth="100" />
+                     <TableColumn fx:id="allReturnDateColumn" text="Return Date" prefWidth="100" />
+                     <TableColumn fx:id="allFineColumn" text="Fine ($)" prefWidth="80" />
+                     <TableColumn fx:id="allStatusColumn" text="Status" prefWidth="100" />
+                  </columns>
+               </TableView>
+
+            </VBox>
+         </Tab>
+
+         <!-- Overdue Books Report -->
+         <Tab fx:id="overdueTab" text="⚠️ Overdue Books" closable="false">
+            <VBox spacing="15" styleClass="report-content">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+
+               <HBox spacing="15" alignment="CENTER_LEFT">
+                  <Label fx:id="overdueCountLabel" text="Overdue Books: 0" styleClass="count-label overdue-count">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="exportOverdueButton" text="📁 Export CSV" styleClass="export-button" />
+               </HBox>
+
+               <TableView fx:id="overdueTable" styleClass="report-table overdue-table">
+                  <columns>
+                     <TableColumn fx:id="overdueIssueIdColumn" text="ID" prefWidth="60" />
+                     <TableColumn fx:id="overdueBookTitleColumn" text="Book Title" prefWidth="200" />
+                     <TableColumn fx:id="overdueUserNameColumn" text="User Name" prefWidth="150" />
+                     <TableColumn fx:id="overdueDueDateColumn" text="Due Date" prefWidth="100" />
+                     <TableColumn fx:id="overdueDaysColumn" text="Days Overdue" prefWidth="100" />
+                     <TableColumn fx:id="overdueFineColumn" text="Current Fine ($)" prefWidth="120" />
+                  </columns>
+               </TableView>
+
+            </VBox>
+         </Tab>
+
+         <!-- Active Users Report -->
+         <Tab fx:id="activeUsersTab" text="👥 Active Users" closable="false">
+            <VBox spacing="15" styleClass="report-content">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+
+               <HBox spacing="15" alignment="CENTER_LEFT">
+                  <Label fx:id="activeUsersCountLabel" text="Active Users: 0" styleClass="count-label">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="exportActiveUsersButton" text="📁 Export CSV" styleClass="export-button" />
+               </HBox>
+
+               <TableView fx:id="activeUsersTable" styleClass="report-table">
+                  <columns>
+                     <TableColumn fx:id="userNameColumn" text="User Name" prefWidth="200" />
+                     <TableColumn fx:id="userRoleColumn" text="Role" prefWidth="100" />
+                     <TableColumn fx:id="totalIssuesColumn" text="Total Issues" prefWidth="100" />
+                     <TableColumn fx:id="activeIssuesColumn" text="Active Issues" prefWidth="100" />
+                     <TableColumn fx:id="totalFinesColumn" text="Total Fines ($)" prefWidth="120" />
+                  </columns>
+               </TableView>
+
+            </VBox>
+         </Tab>
+
+      </TabPane>
+   </center>
+
+</BorderPane>

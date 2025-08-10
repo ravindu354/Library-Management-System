@@ -1,0 +1,212 @@
+/* Student Theme - Blue Colors */
+.dashboard-root, .books-root, .issue-return-root, .report-root {
+    -fx-background-color: #f8f9ff;
+}
+
+/* Header Section */
+.header-section {
+    -fx-background-color: linear-gradient(to right, #3b82f6, #1d4ed8);
+    -fx-background-radius: 0 0 15 15;
+}
+
+.welcome-label, .role-label {
+    -fx-text-fill: white;
+}
+
+.logout-button {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-text-fill: white;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-width: 1px;
+}
+
+.logout-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Navigation */
+.navigation-bar {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 10px;
+    -fx-padding: 10px;
+}
+
+.nav-button {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-text-fill: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 8px 16px;
+}
+
+.nav-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);
+}
+
+/* Statistics Cards */
+.stats-grid {
+    -fx-hgap: 20px;
+    -fx-vgap: 20px;
+}
+
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.15), 10, 0, 0, 5);
+    -fx-alignment: center;
+    -fx-min-width: 150px;
+    -fx-min-height: 120px;
+}
+
+.stat-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.25), 15, 0, 0, 8);
+    -fx-scale-y: 1.02;
+    -fx-scale-x: 1.02;
+}
+
+.overdue-card {
+    -fx-background-color: #fef2f2;
+    -fx-border-color: #fecaca;
+    -fx-border-width: 1px;
+}
+
+.stat-icon {
+    -fx-font-size: 24px;
+}
+
+.stat-label {
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.stat-value {
+    -fx-text-fill: #3b82f6;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+/* Sections */
+.section-title {
+    -fx-text-fill: #1f2937;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.notifications-section, .quick-actions-section {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.1), 8, 0, 0, 3);
+}
+
+.notifications-list {
+    -fx-background-color: #f9fafb;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+
+/* Buttons */
+.action-button, .search-button, .add-button, .edit-button, 
+.save-button, .issue-button, .return-button {
+    -fx-background-color: linear-gradient(to bottom, #3b82f6, #2563eb);
+    -fx-text-fill: white;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.action-button:hover, .search-button:hover, .add-button:hover, 
+.edit-button:hover, .save-button:hover, .issue-button:hover, .return-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #2563eb, #1d4ed8);
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.4), 8, 0, 0, 3);
+}
+
+.delete-button {
+    -fx-background-color: linear-gradient(to bottom, #ef4444, #dc2626);
+    -fx-text-fill: white;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 8px 16px;
+}
+
+.delete-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #dc2626, #b91c1c);
+    -fx-effect: dropshadow(gaussian, rgba(239, 68, 68, 0.4), 8, 0, 0, 3);
+}
+
+.clear-button, .cancel-button {
+    -fx-background-color: linear-gradient(to bottom, #6b7280, #4b5563);
+    -fx-text-fill: white;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 8px 16px;
+}
+
+.clear-button:hover, .cancel-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #4b5563, #374151);
+}
+
+/* Tables */
+.books-table, .users-table, .issues-table, .report-table {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.1), 8, 0, 0, 3);
+}
+
+.table-view .column-header {
+    -fx-background-color: #f3f4f6;
+    -fx-text-fill: #374151;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: rgba(59, 130, 246, 0.1);
+    -fx-border-color: #3b82f6;
+}
+
+/* Form Elements */
+.form-field, .form-combo {
+    -fx-background-color: #f9fafb;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 12px;
+}
+
+.form-field:focused, .form-combo:focused {
+    -fx-border-color: #3b82f6;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.3), 3, 0, 0, 0);
+}
+
+.field-label {
+    -fx-text-fill: #374151;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* Tab Panes */
+.operation-tabs .tab-header-area .tab-header-background {
+    -fx-background-color: #f3f4f6;
+}
+
+.operation-tabs .tab {
+    -fx-background-color: #e5e7eb;
+    -fx-text-fill: #6b7280;
+}
+
+.operation-tabs .tab:selected {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: white;
+}
+
+.tab-content {
+    -fx-background-color: white;
+}
